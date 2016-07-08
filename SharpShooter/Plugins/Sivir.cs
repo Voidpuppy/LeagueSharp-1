@@ -49,6 +49,7 @@ namespace SharpShooter.Plugins
             Drawing.OnDraw += Drawing_OnDraw;
             Orbwalking.AfterAttack += Orbwalking_AfterAttack;
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast;
+            Spellbook.OnCastSpell += OnSpell;
 
             Console.WriteLine("Sharpshooter: Sivir Loaded.");
             Game.PrintChat(
@@ -189,6 +190,14 @@ namespace SharpShooter.Plugins
                         }
                     }
         }
+          private static void OnSpell(Spellbook sender, SpellbookCastSpellEventArgs args)
+        {
+            if (args.Slot == SpellSlot.W)
+            {
+                Orbwalking.LastAATick = 0;
+            }
+        }
+
 
         private void Drawing_OnDraw(EventArgs args)
         {
