@@ -16,7 +16,7 @@ namespace SharpShooter.Plugins
 
         public Sivir()
         {
-            _q = new Spell(SpellSlot.Q, 1250f, TargetSelector.DamageType.Physical) {MinHitChance = HitChance.High};
+            _q = new Spell(SpellSlot.Q, 1250f, TargetSelector.DamageType.Physical) {MinHitChance = HitChance.VeryHigh};
             _w = new Spell(SpellSlot.W);
             _e = new Spell(SpellSlot.E);
             _r = new Spell(SpellSlot.R, 1000f);
